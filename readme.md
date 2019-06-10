@@ -79,7 +79,7 @@
 - 退出mysql目录：exit;
 
 - 修改mysql配置:mysql_secure_installation
-1. 修改秘密
+1. 修改密码
 2. 设置密码等级为LOW（如果之前已经运行过mysql_secure_installation，这里就没有该选项，此时，先完成下面的配置之后再进入mysql目录，通过SHOW VARIABLES LIKE 'validate_password%';查看密码等级，set global validate_password_policy=LOW;修改密码等级）
 
 - 通过npm安装mysql，版本低于5的时候操作数据库可能会报错：
@@ -127,6 +127,7 @@
 1. brew install redis
 2. redis-server 启动服务
 3. redis-cli 启动客户端
+
 **基本操作**
 ```
 set key value 设置值
@@ -140,10 +141,11 @@ del key 删除key
 - 封装成工具函数，可供API使用
 
 - 利用nodejs的http-server在本地开启一个服务器，这样可以通过http://localhost:8001访问静态html
-`npm install http-server -g`
-`http-server -p 8001`
-
-`http-server -c-1 开启服务，页面同步更新`
+```
+npm install http-server -g
+http-server -p 8001
+http-server -c-1 开启服务，页面同步更新
+```
 
 ### nginx介绍
 - 高性能的web服务器，开源免费
@@ -153,8 +155,10 @@ del key 删除key
 `brew install nginx`
 
 **ngnix配置**
-`cd /usr/local/etc/nginx`
-`open nginx.conf -a "visual studio code"`
+```
+cd /usr/local/etc/nginx
+open nginx.conf -a "visual studio code"
+```
 ```
 location / {
             proxy_pass: http://localhost:8001;
@@ -281,6 +285,7 @@ npm install & npm run dev
 **实现登录**
 - 和express类似
 - 基于koa-generic-session和koa-redis
+
 **日志**
 - 安装morgan
 `npm install koa-morgan --save`
@@ -290,6 +295,7 @@ npm install & npm run dev
 - 进程守护，系统崩溃自动重启
 - 启动多进程，充分利用CPU和内存
 - 自带线上日志记录功能
+
 **PM2介绍**
 - 下载安装
 ```
