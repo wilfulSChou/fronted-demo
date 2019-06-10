@@ -1,0 +1,26 @@
+{
+  "name": "blog-1",
+  "version": "1.0.0",
+  "main": "./bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prod": "cross-env NODE_ENV=production nodemon ./bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "blog-1": "www.js"
+  },
+  "description": "",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "mysql": "^2.17.1",
+    "redis": "^2.8.0",
+    "xss": "^1.0.6"
+  }
+}
